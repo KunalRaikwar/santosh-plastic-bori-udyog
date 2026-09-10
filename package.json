@@ -10,8 +10,8 @@
     "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
     "seed": "cd server && node seed.js",
     "build": "cd client && npm run build",
-    "install:all": "npm install && cd server && npm install && cd ../client && npm install",
-    "postinstall": "cd server && npm install && cd ../client && npm install"
+    "install:all": "npm install --include=dev && cd server && npm install --include=dev && cd ../client && npm install --include=dev",
+    "postinstall": "cd server && npm install --include=dev && cd ../client && npm install --include=dev"
   },
   "dependencies": {
     "concurrently": "^8.2.2"
