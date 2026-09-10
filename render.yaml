@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: santosh-plastic-bori-udyog
+    runtime: node
+    plan: free
+    region: singapore
+    buildCommand: npm run install:all && npm run build
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: JWT_SECRET
+        generateValue: true
+      - key: RESET_SECURITY_PIN
+        value: "123456"
+      - key: MONGODB_URI
+        sync: false
